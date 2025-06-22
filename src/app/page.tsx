@@ -1,8 +1,15 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-4">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-slate-800 mb-4">Bienvenue sur Mini CRM </h1>
+    <div
+      className="min-h-screen flex items-center justify-center p-4"
+      style={{
+        background: 'linear-gradient(135deg,rgb(113, 120, 130) 0%,rgb(98, 115, 141) 55%, #2563eb 100%)',
+      }}
+    >
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-xl w-full text-center border border-white/30">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">
+          Bienvenue sur Mini CRM
+        </h1>
         <p className="text-lg text-slate-600 mb-8">
           Gérez vos relations clients avec facilité et efficacité
         </p>
@@ -13,7 +20,6 @@ export default function Home() {
           >
             Commencer
           </a>
-         
         </div>
       </div>
     </div>

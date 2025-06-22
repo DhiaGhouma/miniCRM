@@ -43,6 +43,7 @@ export default function DashboardPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
+        
         <div>
           <h1 className="text-3xl font-bold text-slate-800">Tableau de Bord</h1>
           <p className="text-slate-600">Bon retour ! Voici ce qui se passe avec vos clients.</p>
