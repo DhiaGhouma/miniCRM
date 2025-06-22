@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini CRM – Frontend Challenge
 
-## Getting Started
+Ce projet est un mini CRM développé avec Next.js dans le cadre d’un challenge technique.  
+Il permet de gérer une liste de clients à travers une interface moderne et responsive.
 
-First, run the development server:
+## Objectif
 
-```bash
+Construire l’interface front-end d’un CRM interne en utilisant des données mockées, avec une structure claire, des composants réutilisables, et un design professionnel.
+
+## Fonctionnalités
+
+1. Page de connexion (mock)
+   - Interface simple avec champs email/mot de passe
+   - Pas de backend ni de validation
+2. Dashboard
+   - Barre de navigation (Dashboard, Clients, Ajouter un client)
+   - Layout global réutilisable
+3. Liste des clients
+   - Tableau affichant des données mockées (JSON ou Faker.js)
+   - Colonnes : nom, email, téléphone, date de création
+   - Tri par nom et barre de recherche
+4. Fiche client
+   - Détail des informations d’un client sélectionné
+   - Historique d’activités mocké
+5. Formulaire d’ajout de client
+   - Champs : prénom, nom, email, téléphone
+   - Validation basique (email, téléphone)
+   - Affichage d’un message de succès
+
+## Stack technique
+
+- Next.js (App Router)
+- React 18+
+- Tailwind CSS
+- React Hook Form
+- Faker.js (données mockées)
+- TypeScript (optionnel)
+
+## Structure recommandée
+
+my-crm/
+├── app/
+│ ├── login/page.tsx
+│ ├── dashboard/page.tsx
+│ ├── clients/page.tsx
+│ ├── clients/[id]/page.tsx
+│ └── add-client/page.tsx
+├── components/
+│ ├── Navbar.tsx
+│ ├── ClientTable.tsx
+│ ├── ClientRow.tsx
+│ ├── SearchBar.tsx
+│ ├── ClientCard.tsx
+│ ├── ActivityLog.tsx
+│ ├── AddClientForm.tsx
+│ └── SuccessMessage.tsx
+├── data/
+│ └── clients.json
+├── styles/
+│ └── globals.css
+├── public/
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
+
+
+## Lancer le projet
+
+1. Cloner le dépôt :
+git clone https://github.com/DhiaGhouma/miniCRM.git
+cd mini-crm'
+
+2- Installer les dépendances :
+npm install
+
+3- Lancer le serveur de développement :
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le projet sera disponible sur http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Remarques importantes
+Toutes les données sont simulées, aucun backend n’est requis.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Aucun outil d’IA n’a été utilisé pour générer le code.
 
-## Learn More
+Tous les composants sont organisés de façon réutilisable et découplée.
 
-To learn more about Next.js, take a look at the following resources:
+Le design est responsive, clair et professionnel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Auteur:
+Projet réalisé par : [Dhia Ghouma]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
