@@ -1,7 +1,7 @@
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, UserCheck, UserPlus, TrendingUp } from 'lucide-react';
-import { mockClients } from '@/lib/mockData';
+import { mockClients } from '@/lib/MockData';
 
 export default function DashboardPage() {
   const totalClients = mockClients.length;
