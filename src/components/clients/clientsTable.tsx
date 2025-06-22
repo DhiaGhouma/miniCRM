@@ -29,19 +29,21 @@ export default function ClientTable({ clients }: ClientTableProps) {
     }
   };
 
-  const sortedClients = [...clients].sort((a, b) => {
-    let aValue = a[sortField];
-    let bValue = b[sortField];
+const sortedClients = [...clients].sort((a, b) => {
+  const aValue = a[sortField];
+  const bValue = b[sortField];
 
-    if (sortField === 'createdAt') {
-      aValue = new Date(aValue).getTime();
-      bValue = new Date(bValue).getTime();
-    }
+  if (sortField === 'createdAt') {
+    const aTime = new Date(aValue as string).getTime();
+    const bTime = new Date(bValue as string).getTime();
+    return sortDirection === 'asc' ? aTime - bTime : bTime - aTime;
+  }
 
-    if (aValue < bValue) return sortDirection === 'asc' ? -1 : 1;
-    if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1;
-    return 0;
-  });
+  if (aValue! < bValue!) return sortDirection === 'asc' ? -1 : 1;
+  if (aValue! > bValue!) return sortDirection === 'asc' ? 1 : -1;
+  return 0;
+});
+
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('fr-FR', {
@@ -158,14 +160,19 @@ export default function ClientTable({ clients }: ClientTableProps) {
                   <td className="px-6 py-4 text-slate-800">
                     {formatDate(client.createdAt)}
                   </td>
-                  <td className="px-6 py-4">
-                    <Link href={`/clients/${client.id}`}>
-                      <Button variant="outline" size="sm" className="bg-slate-50 border-slate-300 hover:bg-slate-100">
-                        <Eye className="h-4 w-4 mr-2" />
-                        Voir
-                      </Button>
-                    </Link>
-                  </td>
+                <td className="px-6 py-4">
+  <Link href={`/clients/${client.id}`}>
+    <Button
+      variant="outline"
+      size="sm"
+      className="bg-white border border-black text-black hover:bg-black hover:text-white"
+    >
+      <Eye className="h-4 w-4 mr-2" />
+      Voir
+    </Button>
+  </Link>
+</td>
+
                 </tr>
               ))}
             </tbody>

@@ -22,63 +22,63 @@ export interface Activity {
 export const mockClients: Client[] = [
   {
     id: '1',
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
-    phone: '+1 (555) 123-4567',
-    createdAt: '2024-01-15',
-    lastContact: '2024-01-20',
+    firstName: 'Khalil',
+    lastName: 'Ayari',
+    email: 'khalil.ayari@tuncrm.com',
+    phone: '+216 20 123 456',
+    createdAt: '2024-02-05',
+    lastContact: '2024-03-01',
     status: 'active',
-    company: 'Tech Solutions Inc.',
-    notes: 'Interested in enterprise package'
+    company: 'TuniTech',
+    notes: 'Intéressé par une démo de la version Pro.'
   },
   {
     id: '2',
-    firstName: 'Jane',
-    lastName: 'Smith',
-    email: 'jane.smith@example.com',
-    phone: '+1 (555) 234-5678',
-    createdAt: '2024-01-10',
-    lastContact: '2024-01-18',
+    firstName: 'Ebtihel',
+    lastName: 'Ben Romdhane',
+    email: 'ebtihel.benromdhane@tuncrm.com',
+    phone: '+216 21 456 789',
+    createdAt: '2024-02-10',
+    lastContact: '2024-03-05',
     status: 'prospect',
-    company: 'Design Studio',
-    notes: 'Potential high-value client'
+    company: 'Digital Wave',
+    notes: 'Demande des infos sur l’intégration ERP.'
   },
   {
     id: '3',
-    firstName: 'Mike',
-    lastName: 'Johnson',
-    email: 'mike.johnson@example.com',
-    phone: '+1 (555) 345-6789',
-    createdAt: '2024-01-05',
-    lastContact: '2024-01-12',
+    firstName: 'Dhia',
+    lastName: 'Ghouma',
+    email: 'dhia.ghouma@tuncrm.com',
+    phone: '+216 23 111 222',
+    createdAt: '2024-01-20',
+    lastContact: '2024-03-02',
     status: 'active',
-    company: 'Marketing Pro',
-    notes: 'Regular monthly meetings scheduled'
+    company: 'SmartDev Tunisia',
+    notes: 'Contact régulier, intéressé par l’IA intégrée.'
   },
   {
     id: '4',
-    firstName: 'Sarah',
-    lastName: 'Wilson',
-    email: 'sarah.wilson@example.com',
-    phone: '+1 (555) 456-7890',
-    createdAt: '2024-01-08',
-    lastContact: '2024-01-15',
+    firstName: 'Yasmine',
+    lastName: 'Trabelsi',
+    email: 'yasmine.trabelsi@tuncrm.com',
+    phone: '+216 24 789 456',
+    createdAt: '2024-01-15',
+    lastContact: '2024-02-28',
     status: 'inactive',
-    company: 'Creative Agency',
-    notes: 'Contract ended, potential for renewal'
+    company: 'Design360',
+    notes: 'Contrat terminé, en pause pour le moment.'
   },
   {
     id: '5',
-    firstName: 'David',
-    lastName: 'Brown',
-    email: 'david.brown@example.com',
-    phone: '+1 (555) 567-8901',
-    createdAt: '2024-01-12',
-    lastContact: '2024-01-22',
+    firstName: 'Oussama',
+    lastName: 'Mseddi',
+    email: 'oussama.mseddi@tuncrm.com',
+    phone: '+216 25 321 654',
+    createdAt: '2024-03-01',
+    lastContact: '2024-03-15',
     status: 'active',
-    company: 'Innovation Labs',
-    notes: 'Interested in custom solutions'
+    company: 'InnoSoft',
+    notes: 'Souhaite une personnalisation du dashboard.'
   }
 ];
 
@@ -87,80 +87,59 @@ export const mockActivities: Record<string, Activity[]> = {
     {
       id: '1',
       type: 'email',
-      description: 'Sent proposal for enterprise package',
-      date: '2024-01-20',
-      user: 'Alex Thompson'
+      description: 'Envoi de la présentation produit Pro',
+      date: '2024-03-01',
+      user: 'Support CRM'
     },
     {
       id: '2',
       type: 'call',
-      description: 'Initial consultation call - 45 minutes',
-      date: '2024-01-18',
-      user: 'Alex Thompson'
-    },
-    {
-      id: '3',
-      type: 'meeting',
-      description: 'Product demo meeting scheduled',
-      date: '2024-01-15',
-      user: 'Sarah Davis'
+      description: 'Appel de suivi client - 30 minutes',
+      date: '2024-02-28',
+      user: 'Support CRM'
     }
   ],
   '2': [
     {
-      id: '4',
-      type: 'email',
-      description: 'Follow-up email sent',
-      date: '2024-01-18',
-      user: 'Mike Rodriguez'
-    },
-    {
-      id: '5',
+      id: '3',
       type: 'note',
-      description: 'Client expressed interest in premium features',
-      date: '2024-01-16',
-      user: 'Mike Rodriguez'
+      description: 'Intéressée par une version API-friendly',
+      date: '2024-03-04',
+      user: 'Support Technique'
     }
   ],
   '3': [
     {
-      id: '6',
+      id: '4',
       type: 'meeting',
-      description: 'Monthly check-in meeting',
-      date: '2024-01-12',
-      user: 'Lisa Chen'
-    },
-    {
-      id: '7',
-      type: 'call',
-      description: 'Technical support call',
-      date: '2024-01-10',
-      user: 'Lisa Chen'
+      description: 'Réunion sur les modules IA',
+      date: '2024-02-28',
+      user: 'Ingénieur Commercial'
     }
   ],
   '4': [
     {
-      id: '8',
+      id: '5',
       type: 'email',
-      description: 'Contract renewal reminder sent',
-      date: '2024-01-15',
-      user: 'John Martinez'
+      description: 'Rappel : fin de contrat',
+      date: '2024-02-28',
+      user: 'Relation Client'
     }
   ],
   '5': [
     {
-      id: '9',
+      id: '6',
       type: 'call',
-      description: 'Discovery call - custom solution requirements',
-      date: '2024-01-22',
-      user: 'Emma Wilson'
+      description: 'Discussion sur le design du tableau de bord',
+      date: '2024-03-14',
+      user: 'Consultant UX'
     },
     {
-      id: '10',
+      id: '7',
       type: 'email',
-      description: 'Welcome email and onboarding materials sent',
-      date: '2024-01-12',
-      user: 'Emma Wilson'
+      description: 'Confirmation de session de test utilisateur',
+      date: '2024-03-15',
+      user: 'Consultant UX'
     }
   ]
 };
