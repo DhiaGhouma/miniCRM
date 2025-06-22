@@ -68,7 +68,7 @@ my-crm/
 ## Lancer le projet
 
 1. Cloner le dépôt :
-git clone https://github.com/votre-utilisateur/mini-crm.git
+git clone https://github.com/DhiaGhouma/miniCRM.git
 cd mini-crm'
 
 2- Installer les dépendances :
