@@ -34,7 +34,7 @@ export default function NavBar() {
               <div className="bg-blue-600 p-2 rounded-lg shadow-md">
                 <Building2 className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-slate-800">CRM Pro</span>
+              <span className="text-xl font-bold text-slate-800">Mini CRM </span>
             </Link>
           </div>
 

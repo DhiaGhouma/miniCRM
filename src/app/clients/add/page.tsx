@@ -167,19 +167,25 @@ export default function AddClientPage() {
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="status" className="text-sm font-medium text-slate-700">Statut</Label>
-                  <Select value={formData.status} onValueChange={(value) => handleInputChange('status', value)}>
-                    <SelectTrigger className="bg-slate-50 border-slate-300 focus:border-blue-500 focus:ring-blue-500 text-black">
-                      <SelectValue placeholder="Sélectionner le statut" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="prospect">Prospect</SelectItem>
-                      <SelectItem value="active">Actif</SelectItem>
-                      <SelectItem value="inactive">Inactif</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+             <div className="space-y-2">
+  <Label htmlFor="status" className="text-sm font-medium text-slate-700">Statut</Label>
+  <Select
+    value={formData.status}
+    onValueChange={(value) => handleInputChange('status', value)}
+  >
+    <SelectTrigger
+      className="bg-slate-50 border-slate-300 focus:border-blue-500 focus:ring-blue-500 text-black"
+    >
+      <SelectValue placeholder="Sélectionner le statut" className="text-black" />
+    </SelectTrigger>
+    <SelectContent className="bg-white text-black">
+      <SelectItem value="prospect" className="text-black">Prospect</SelectItem>
+      <SelectItem value="active" className="text-black">Actif</SelectItem>
+      <SelectItem value="inactive" className="text-black">Inactif</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
 
                 <div className="space-y-2">
                   <Label htmlFor="notes" className="text-sm font-medium text-slate-700">Notes</Label>
