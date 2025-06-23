@@ -4,16 +4,11 @@ import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import ClientTable from '@/components/clients/clientsTable';
 import SearchBar from '@/components/ui/SearchBar';
-import { mockClients } from '@/lib/MockData';
+import { useCRMStore } from '@/lib/store';
 
 export default function ClientsPage() {
+  const { clients } = useCRMStore();
   const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredClients = mockClients.filter(client =>
-    `${client.firstName} ${client.lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    client.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    client.company?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <DashboardLayout>
@@ -35,7 +30,7 @@ export default function ClientsPage() {
           </div>
         </div>
 
-        <ClientTable clients={filteredClients} />
+        <ClientTable clients={clients} searchTerm={searchTerm} />
       </div>
     </DashboardLayout>
   );
