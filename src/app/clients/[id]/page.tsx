@@ -1,9 +1,12 @@
+"use client";
+
 import { notFound } from 'next/navigation';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import TagInput from '@/components/ui/tagInput';
 import { 
   User, 
   Mail, 
@@ -15,9 +18,10 @@ import {
   PhoneCall,
   Video,
   FileText,
-  Edit
+  Edit,
+  Tag as TagIcon
 } from 'lucide-react';
-import { mockClients, mockActivities } from '@/lib/MockData';
+import { useCRMStore } from '@/lib/store';
 import { cn } from '@/lib/utilis';
 
 interface ClientDetailsPageProps {
@@ -27,8 +31,9 @@ interface ClientDetailsPageProps {
 }
 
 export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
-  const client = mockClients.find(c => c.id === params.id);
-  const activities = mockActivities[params.id] || [];
+  const { getClient, getClientActivities, tags } = useCRMStore();
+  const client = getClient(params.id);
+  const activities = getClientActivities(params.id);
 
   if (!client) {
     notFound();
@@ -83,9 +88,12 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
     });
   };
 
+  const getTagById = (tagId: string) => {
+    return tags.find(tag => tag.id === tagId);
+  };
+
   return (
     <DashboardLayout>
-        
       <div className="space-y-6">
         <div className="flex justify-between items-start">
           <div>
@@ -101,7 +109,7 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 space-y-6">
             <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
@@ -158,6 +166,21 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
                 )}
               </CardContent>
             </Card>
+
+            <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <TagIcon className="h-5 w-5 text-slate-600" />
+                  <span className="text-slate-800">Tags</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <TagInput
+                  clientId={client.id}
+                  selectedTags={client.tags}
+                />
+              </CardContent>
+            </Card>
           </div>
 
           <div className="space-y-6">
@@ -178,8 +201,37 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
                   <span className="text-sm text-slate-600">Client Depuis</span>
                   <span className="font-semibold text-slate-800">{formatDate(client.createdAt)}</span>
                 </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-slate-600">Tags Assignés</span>
+                  <span className="font-semibold text-slate-800">{client.tags.length}</span>
+                </div>
               </CardContent>
             </Card>
+
+            {client.tags.length > 0 && (
+              <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
+                <CardHeader>
+                  <CardTitle className="text-lg text-slate-800">Tags Assignés</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {client.tags.map((tagId) => {
+                      const tag = getTagById(tagId);
+                      if (!tag) return null;
+                      return (
+                        <Badge
+                          key={tagId}
+                          className={cn("flex items-center gap-1", tag.color)}
+                        >
+                          <TagIcon className="h-3 w-3" />
+                          {tag.name}
+                        </Badge>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
 
