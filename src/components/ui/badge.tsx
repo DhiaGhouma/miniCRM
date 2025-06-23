@@ -16,6 +16,7 @@ const badgeVariants = cva(
           'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
         outline: 'text-foreground',
         black: 'bg-black text-white border-black hover:bg-gray-900',
+        blackText: 'text-black', // <-- added this
       },
     },
     defaultVariants: {
@@ -23,6 +24,7 @@ const badgeVariants = cva(
     },
   }
 );
+
 
 
 export interface BadgeProps
