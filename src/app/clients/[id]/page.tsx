@@ -101,7 +101,6 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Client Information */}
           <div className="lg:col-span-2">
             <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
               <CardHeader>
@@ -161,7 +160,6 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
             </Card>
           </div>
 
-          {/* Quick Stats */}
           <div className="space-y-6">
             <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
               <CardHeader>
@@ -185,7 +183,6 @@ export default function ClientDetailsPage({ params }: ClientDetailsPageProps) {
           </div>
         </div>
 
-        {/* Activity Timeline */}
         <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">

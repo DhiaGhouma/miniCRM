@@ -66,7 +66,6 @@ export default function DashboardPage() {
           ))}
         </div>
 
-        {/* Recent Clients */}
         <Card className="bg-slate-100/50 backdrop-blur-sm border-slate-200">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-slate-800">Clients Récents</CardTitle>

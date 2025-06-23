@@ -38,7 +38,6 @@ export default function NavBar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -69,24 +68,24 @@ export default function NavBar() {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
+         <div className="md:hidden flex items-center">
+  <Button
+    variant="ghost"
+    size="sm"
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+    className="text-black hover:text-white hover:bg-blue-600 rounded-full p-2 transition-colors"
+  >
+    {isMobileMenuOpen ? (
+      <X className="h-6 w-6 text-black" />
+    ) : (
+      <Menu className="h-6 w-6 text-black" />
+    )}
+  </Button>
+</div>
+
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-slate-100/95 backdrop-blur-sm border-t border-slate-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
